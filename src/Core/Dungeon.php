@@ -41,6 +41,7 @@ class Dungeon extends AbstractDungeon
             } while ($this->dungeon[$x][$y] !== DungeonConfig::$EMPTY_TALE);
 
             $this->dungeon[$x][$y] = DungeonConfig::$ROOM_TALE;
+            $this->cRooms++;
 
             $generatedRooms++;
         }

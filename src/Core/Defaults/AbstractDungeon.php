@@ -12,8 +12,11 @@ use Mld\Core\Defaults\Dungeon as DungeonConfig;
 
 abstract class AbstractDungeon
 {
+    /** @var int $cRooms */
+    public $cRooms = 0;
+
     /** @var array $dungeon */
-    protected $dungeon = [];
+    public $dungeon = [];
 
     /**
      * Initialisation

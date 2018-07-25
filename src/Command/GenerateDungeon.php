@@ -37,6 +37,9 @@ class GenerateDungeon extends ContainerAwareCommand
     /** @var OutputInterface $output */
     protected $output;
 
+    /** @var Dungeon $dungeon */
+    protected $dungeon;
+
     /**
      * GreetCommand constructor.
      *
@@ -98,7 +101,7 @@ class GenerateDungeon extends ContainerAwareCommand
 
         $this->generate();
 
-        $this->output->writeln(sprintf('Dungeon generated !'));
+        $this->output->writeln(sprintf('Dungeon generated (with : %d rooms) !', $this->dungeon->cRooms));
     }
 
     /**
@@ -108,11 +111,11 @@ class GenerateDungeon extends ContainerAwareCommand
      */
     protected function generate(): void
     {
-        $dungeon = new Dungeon();
+        $this->dungeon = new Dungeon();
 
-        $dungeon->generate();
+        $this->dungeon->generate();
 
-        echo $dungeon;
+        echo $this->dungeon;
     }
 
     /**
